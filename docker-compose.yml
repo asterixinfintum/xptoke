@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+  nginxserver:
+    container_name: nginxserver
+    build: ./nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./nginx/data/certs:/etc/nginx/certs
+    depends_on:
+      - nodeserver
+
+  nodeserver:
+    container_name: nodeserver
+    restart: always
+    build: ./nodeserver
+    environment:
+      - PORT=8001
