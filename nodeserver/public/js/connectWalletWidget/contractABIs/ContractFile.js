@@ -282,6 +282,6 @@ const contractabi = [
     }
 ];
 
-const contractAddress = '0x8E5d65d9101bD4eB0472E4e4F5caB34456dcB7a5';
+const contractAddress = '0x3B5af710DE7cE11C453533910a94358479067728';
 
 export { contractabi, contractAddress };
